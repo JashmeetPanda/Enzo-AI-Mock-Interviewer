@@ -130,7 +130,7 @@ function AddNewInterview() {
                     </label>
                     <Input
                       className="text-black"
-                      placeholder="Ex. 0"
+                      placeholder="Ex. 3"
                       type="number"
                       required
                       max="30"
