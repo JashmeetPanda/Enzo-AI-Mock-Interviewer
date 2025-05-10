@@ -46,7 +46,9 @@ function Feedback({ params }) {
         <div className="bg-white rounded-3xl shadow-2xl p-10 text-center mb-10 border border-gray-100">
           <h1 className="text-5xl font-extrabold text-green-600 mb-3 animate-fade-in">🎉 Congratulations!</h1>
           <p className="text-2xl font-semibold text-gray-800">Your Personalized Interview Feedback</p>
-          
+          <p className="mt-4 text-blue-700 text-lg font-medium">
+            🌟 Overall Rating: <span className="font-bold text-black">{averageRating}/5</span>
+          </p>
           <p className="text-gray-600 mt-1">Scroll below for per-question analysis and feedback</p>
         </div>
 
