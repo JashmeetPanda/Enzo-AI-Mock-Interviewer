@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 function StartInterview({ params }) {
-  const [interviewData, setInterviewData] = useState();
+  const [interviewData, setInterviewData] = useState([]);
   const [mockInterviewQuestion, setMockInterviewQuestion] = useState();
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
 
