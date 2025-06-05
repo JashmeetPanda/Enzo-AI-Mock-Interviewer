@@ -12,7 +12,9 @@ function QuestionsSection({ mockInterviewQuestion, activeQuestionIndex, setActiv
     }
   };
 
-  return mockInterviewQuestion && (
+  if (!Array.isArray(mockInterviewQuestion)) return null;
+
+  return (
     <div className="p-6 rounded-2xl shadow-xl bg-white border border-gray-200 my-8">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
         {mockInterviewQuestion.map((_, index) => (
