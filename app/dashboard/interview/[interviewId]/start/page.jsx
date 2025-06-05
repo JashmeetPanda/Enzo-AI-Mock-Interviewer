@@ -24,18 +24,9 @@ function StartInterview({ params }) {
         .from(MockInterview)
         .where(eq(MockInterview.mockId, params.interviewId));
 
-      const parsed = JSON.parse(result[0].jsonMockResp);
-
-      // Normalize into an array (skip if it's already an array)
-      const questions = Array.isArray(parsed)
-        ? parsed
-        : typeof parsed === "object"
-        ? Object.values(parsed)
-        : [];
-
-      console.log("Normalized questions", questions);
-
-      setMockInterviewQuestion(questions);
+      const jsonMockResp = JSON.parse(result[0].jsonMockResp);
+      console.log("jsonMockResp", jsonMockResp);
+      setMockInterviewQuestion(jsonMockResp);
       setInterviewData(result[0]);
     } catch (error) {
       console.error("Error fetching interview data:", error);

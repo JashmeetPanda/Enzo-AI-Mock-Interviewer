@@ -36,7 +36,30 @@ function AddNewInterview() {
     const questionCount = parseInt(process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT) || 5;
     const experience = parseInt(jobExperience); // Handle 0 correctly
 
-    const inputPrompt = `Job Position: ${jobPosition}, JD: ${jobDescription}, Years of Experience: ${experience}. Based on this, provide ${questionCount} interview questions with answers in JSON format.`;
+    const inputPrompt = `
+You are an expert interviewer.
+
+Generate exactly ${questionCount} interview questions and answers in the following JSON array format, and return only the array:
+
+[
+  {
+    "question": "What is ...?",
+    "answer": "The answer is ..."
+  },
+  {
+    "question": "Explain ...",
+    "answer": "..."
+  }
+  // ... more Q&A objects
+]
+
+Job Position: ${jobPosition}
+Job Description: ${jobDescription}
+Years of Experience: ${experience}
+
+Make sure the final response is a valid JSON array (not an object or plain text).
+`;
+
 
     let MockJsonResp = "";
 
